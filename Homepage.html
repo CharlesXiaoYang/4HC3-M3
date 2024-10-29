@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Recipes - Home</title>
+    <link rel="stylesheet" href="Homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <a href="Homepage.html" class="logo">
+                <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
+            </a>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><button id="find-button" class="nav-button"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
+                <li><button id="post-button" class="nav-button"><img src="Post.png" alt="Post" class="nav-icon"> Post</button></li>
+                <li><button id="notification-button" class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
+                <li><button id="me-button" class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
+            </ul>
+            <button id="login-button" class="login-button">Login</button>
+        </nav>
+
+        <header>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="button" class="search-button">
+                    <img src="search-icon.png" alt="Search">
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="recommendation-bar">
+                <button class="category-button">Recommended</button>
+                <button class="category-button">Fashion</button>
+                <button class="category-button">Food</button>
+                <button class="category-button">Makeup</button>
+                <button class="category-button">Movies</button>
+                <button class="category-button">Fitness</button>
+                <button class="category-button">Travel</button>
+                <button class="category-button">Health</button>
+            </div>
+            <div class="recipe-grid">
+                <section class="recipe-card">
+                    <img src="kung-pao-chicken.jpg" alt="Kung Pao Chicken">
+                    <h3>Kung Pao Chicken</h3>
+                    <p>Delicious and spicy stir-fry with chicken, peanuts, and dried chili. <span class="like-count">1.7k likes</span></p>
+                </section>
+                <!-- Additional recipe cards can be added here -->
+            </div>
+        </main>
+
+        <aside class="location-search-container">
+            <label for="location">Location:</label>
+            <select id="location" class="location-dropdown">
+                <option value="big-bee-food-mart">Big Bee Food Mart</option>
+                <option value="locations-fresh-food">Locations Fresh Food</option>
+                <option value="tuna-salmon">Tuna & Salmon</option>
+                <option value="avocado">Avocado</option>
+                <option value="anytime-food-mart">Anytime Food Mart</option>
+            </select>
+        </aside>
+
+        <footer>
+            <div class="icons">
+                <button class="like">Like</button>
+                <button class="bookmark">Bookmark</button>
+                <button class="comment">Comment</button>
+                <button class="share">Share</button>
+                <button class="help">Help</button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
