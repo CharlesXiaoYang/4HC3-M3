@@ -16,64 +16,95 @@
                 <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
             </a>
             <ul style="list-style-type: none; padding-left: 0;">
-                <li><button id="find-button" class="nav-button"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
+                <li><button id="find-button" class="nav-button active"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
                 <li><button id="post-button" class="nav-button"><img src="Post.png" alt="Post" class="nav-icon"> Post</button></li>
                 <li><button id="notification-button" class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
                 <li><button id="me-button" class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
             </ul>
             <button id="login-button" class="login-button">Login</button>
         </nav>
-
+        
         <header>
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button type="button" class="search-button">
-                    <img src="search-icon.png" alt="Search">
-                </button>
+            <div class="header-container">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Find your next favorite dish...">
+                        <button type="button" class="search-button">
+                            <img src="search-icon.png" alt="Search">
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="find-stores-button">Find stores near me</button>
             </div>
         </header>
+        
+        
 
         <main class="main-content">
             <div class="recommendation-bar">
-                <button class="category-button">Recommended</button>
-                <button class="category-button">Fashion</button>
-                <button class="category-button">Food</button>
-                <button class="category-button">Makeup</button>
-                <button class="category-button">Movies</button>
-                <button class="category-button">Fitness</button>
-                <button class="category-button">Travel</button>
-                <button class="category-button">Health</button>
+                <button class="category-button active">Recommended</button>
+                <button class="category-button">Sandwich</button>
+                <button class="category-button">Soup</button>
+                <button class="category-button">Stew</button>
+                <button class="category-button">Salad</button>
+                <button class="category-button">Smoothie</button>
+                <button class="category-button">Noodles</button>
+                <button class="category-button">BBQ</button>
             </div>
             <div class="recipe-grid">
-                <section class="recipe-card">
-                    <img src="kung-pao-chicken.jpg" alt="Kung Pao Chicken">
-                    <h3>Kung Pao Chicken</h3>
-                    <p>Delicious and spicy stir-fry with chicken, peanuts, and dried chili. <span class="like-count">1.7k likes</span></p>
-                </section>
-                <!-- Additional recipe cards can be added here -->
+                <div class="recipe-card-container">
+                    <section class="recipe-card">
+                        <img src="kung pao chicken.jpg" alt="Kung Pao Chicken">
+                    </section>
+                    <h3 class="recipe-title">Kung Pao Chicken</h3>
+                    <div class="poster-info">
+                        <img src="user-avatar.jpg" alt="Poster Avatar" class="poster-avatar">
+                        <span class="poster-name">Charles Xiao</span>
+                        <span class="like-count">❤️ 1.65k likes</span>
+                    </div>
+                </div>
+
+                <div class="recipe-card-container">
+                    <section class="recipe-card">
+                        <img src="kung pao chicken.jpg" alt="Kung Pao Chicken">
+                    </section>
+                    <h3 class="recipe-title">Kung Pao Chicken</h3>
+                    <div class="poster-info">
+                        <img src="user-avatar.jpg" alt="Poster Avatar" class="poster-avatar">
+                        <span class="poster-name">Charles Xiao</span>
+                        <span class="like-count">❤️ 1.65k likes</span>
+                    </div>
+                </div>
+
+                <div class="recipe-card-container">
+                    <section class="recipe-card">
+                        <img src="kung pao chicken.jpg" alt="Kung Pao Chicken">
+                    </section>
+                    <h3 class="recipe-title">Kung Pao Chicken</h3>
+                    <div class="poster-info">
+                        <img src="user-avatar.jpg" alt="Poster Avatar" class="poster-avatar">
+                        <span class="poster-name">Charles Xiao</span>
+                        <span class="like-count">❤️ 1.65k likes</span>
+                    </div>
+                </div>
+
+                <div class="recipe-card-container">
+                    <section class="recipe-card">
+                        <img src="kung pao chicken.jpg" alt="Kung Pao Chicken">
+                    </section>
+                    <h3 class="recipe-title">Kung Pao Chicken</h3>
+                    <div class="poster-info">
+                        <img src="user-avatar.jpg" alt="Poster Avatar" class="poster-avatar">
+                        <span class="poster-name">Charles Xiao</span>
+                        <span class="like-count">❤️ 1.65k likes</span>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for additional recipe cards -->
             </div>
+            
+            
+            
         </main>
-
-        <aside class="location-search-container">
-            <label for="location">Location:</label>
-            <select id="location" class="location-dropdown">
-                <option value="big-bee-food-mart">Big Bee Food Mart</option>
-                <option value="locations-fresh-food">Locations Fresh Food</option>
-                <option value="tuna-salmon">Tuna & Salmon</option>
-                <option value="avocado">Avocado</option>
-                <option value="anytime-food-mart">Anytime Food Mart</option>
-            </select>
-        </aside>
-
-        <footer>
-            <div class="icons">
-                <button class="like">Like</button>
-                <button class="bookmark">Bookmark</button>
-                <button class="comment">Comment</button>
-                <button class="share">Share</button>
-                <button class="help">Help</button>
-            </div>
-        </footer>
     </div>
 </body>
 </html>

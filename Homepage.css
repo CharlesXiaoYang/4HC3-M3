@@ -1,3 +1,5 @@
+/* Updated Homepage CSS */
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -25,27 +27,81 @@ header {
     justify-content: flex-end;
     border-bottom: 1px solid #e0e0e0;
 }
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 20px; /* Space between the search bar and the button */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Set a reasonable width for the search container */
+}
 
 .search-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: #f9f9f9;
+    border-radius: 25px;
+    padding: 5px 10px;
     width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar input {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    border: none;
     outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding-left: 10px;
 }
 
 .search-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+.find-stores-button {
+    padding: 8px 12px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+}
+
+.find-stores-button:hover {
+    background-color: #e55a4f;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.search-button img {
+    width: 20px;
+    height: auto;
+    object-fit: contain;
 }
 
 .sidebar {
@@ -61,7 +117,7 @@ header {
 .sidebar .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ff6f61;
+    color: #f9f9f9;
     margin-bottom: 20px;
     align-self: center;
 }
@@ -79,11 +135,18 @@ header {
     align-items: center;
     justify-content: flex-start;
     border-radius: 25px;
+    font-weight: bold;
+}
+
+.nav-button.active {
+    background-color: #f9f9f9;
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-button:hover {
-    background-color: #ff6f61;
-    color: #fff;
+    background-color: #f9f9f9;
+    color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -116,6 +179,7 @@ header {
     grid-area: main;
     padding: 20px;
     overflow-y: auto;
+    background-color: #fff;
 }
 
 .recommendation-bar {
@@ -123,78 +187,126 @@ header {
     gap: 10px;
     margin-bottom: 20px;
 }
-
 .category-button {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Center text */
+    padding: 3px 10px; /* Smaller padding for a compact button size */
+    margin: 0 3px; /* Reduced space between buttons */
+    font-size: 0.8rem; /* Smaller font size */
+    background-color: transparent; /* Match main content background color */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: #444; /* Text color */
 }
 
+/* Hover effect for .category-button */
 .category-button:hover {
-    background-color: #ff6f61;
-    color: #fff;
+    background-color: #f9f9f9; /* Light background color on hover */
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Active state for .category-button (optional) */
+.category-button.active {
+    background-color: #f9f9f9; /* Indicating active selection */
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.recipe-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .recipe-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden; /* Ensure the image doesn't overflow outside the card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    display: block;
     transition: transform 0.3s;
 }
 
 .recipe-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.recipe-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+.recipe-title {
+    font-size: 1rem; /* Made the title smaller */
+    color: #444; /* Softer color for the title */
+    text-align: center;
+    margin: 8px 0; /* Reduced margin for tighter spacing */
 }
 
-.location-search-container {
-    grid-area: header;
-    margin-left: auto;
-}
-
-.location-dropdown {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    margin-top: 5px;
-}
-
-footer {
-    grid-area: footer;
-    background-color: #fff;
-    padding: 20px;
+.poster-info {
     display: flex;
-    justify-content: center;
-    border-top: 1px solid #e0e0e0;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px; /* Limit the width of the poster info to match the card */
+    padding: 5px 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
 }
 
-.icons button {
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: color 0.3s;
+.poster-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-.icons button:hover {
-    color: #ff6f61;
+.poster-name {
+    font-size: 0.8rem; /* Made user name smaller */
+    color: #666; /* Softer color for the user name */
+    margin-right: auto;
+}
+
+.like-count {
+    font-size: 0.8rem; /* Consistent size for like count */
+    color: #888;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto auto;
+    }
+    .sidebar {
+        grid-area: sidebar;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .nav-button {
+        padding: 5px;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+    }
 }
