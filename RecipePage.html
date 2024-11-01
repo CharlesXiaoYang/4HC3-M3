@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Recipes - Recipe Detail</title>
+    <link rel="stylesheet" href="Homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .middle{ 
+         display: flex;
+         gap: 100px;
+         padding-bottom: 60px;
+        }
+        .recipe-detail-header{
+            padding-bottom: 60px;
+        }
+        .comment{
+            display: flex;
+            gap: 30px;
+            padding-bottom: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <a href="Homepage.html" class="logo">
+                <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
+            </a>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><button class="nav-button"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
+                <li><button class="nav-button"><img src="Post.png" alt="Post" class="nav-icon"> Post</button></li>
+                <li><button class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
+                <li><button class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
+            </ul>
+            <button id="login-button" class="login-button">Login</button>
+        </nav>
+
+        <!-- Header with search bar and store button -->
+        <header>
+            <div class="header-container">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Find your next favorite dish...">
+                        <button type="button" class="search-button">
+                            <img src="search-icon.png" alt="Search">
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="find-stores-button">Find stores near me</button>
+            </div>
+        </header>
+
+        <!-- Main content for Recipe Details -->
+        <main class="main-content">
+
+                <!-- Recipe Title and Image -->
+                <section class="recipe-detail-header">
+                    <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
+                    <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
+
+                    <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 400px; height: auto;">
+                    <div class="recipe-meta">
+                        <span class="like-count">❤️ 1.65k likes</span>
+                    </div>
+                </section>
+
+
+            <div class="middle">
+                <!-- Ingredients Section -->
+                <section class="ingredients-section"> 
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>1 lb chicken breast, cubed</li>
+                        <li>1/2 cup peanuts</li>
+                        <li>1 bell pepper, chopped</li>
+                        <li>2 green onions, chopped</li>
+                        <li>3 tbsp soy sauce</li>
+                        <li>1 tbsp rice vinegar</li>
+                        <li>1 tsp sugar</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1 tbsp chili paste (optional for extra heat)</li>
+                    </ul>
+                </section>
+
+                <!-- Steps Section -->
+                <section class="steps-section">
+                    <h2>Instructions</h2>
+                    <ol>
+                        <li>In a bowl, mix soy sauce, rice vinegar, sugar, and garlic to make the marinade.</li>
+                        <li>Marinate chicken cubes for at least 15 minutes.</li>
+                        <li>Heat a pan over medium-high heat and add a small amount of oil.</li>
+                        <li>Sauté the chicken until cooked through, then add the peanuts, bell pepper, and green onions.</li>
+                        <li>Add chili paste for extra heat, if desired, and cook for an additional 2-3 minutes.</li>
+                        <li>Serve hot over rice, garnished with extra green onions if desired.</li>
+                    </ol>
+                </section>
+            </div>
+
+            <!-- Comments Section -->
+            <section class="comments-section">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <img src="user-avatar.jpg" alt="User Avatar" class="comment-avatar">
+                    <div class="comment-content">
+                        <span class="commenter-name">User123</span>
+                        <p>This recipe was amazing! Perfect balance of sweet and spicy.</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="user-avatar.jpg" alt="User Avatar" class="comment-avatar">
+                    <div class="comment-content">
+                        <span class="commenter-name">FoodLover89</span>
+                        <p>Added extra chili paste and it was just the kick I needed!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
