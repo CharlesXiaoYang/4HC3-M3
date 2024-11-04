@@ -44,6 +44,19 @@
             </div>
         </header>
 
+        <!-- Bookmark Popup Menu -->
+        <div id="bookmark-popup" class="popup" style="display: none;">
+            <h3>Choose where to bookmark</h3>
+            <select id="bookmark-folder">
+                <option value="favorites">Favorites</option>
+                <option value="to-try">To Try</option>
+                <option value="quick-meals">Quick Meals</option>
+                <option value="family-dinners">Family Dinners</option>
+            </select>
+            <button onclick="confirmBookmark()">Confirm</button>
+            <button onclick="closePopup()">Cancel</button>
+        </div>
+
         <!-- Main content for Recipe Details -->
         <main class="main-content">
 
@@ -55,9 +68,12 @@
                     <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto">
                     <div class="recipe-meta">
                         <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
-                        <div class="save-button" onclick="toggleSave(this)" data-saved="false"> 
+                        <!-- <div class="save-button" onclick="toggleSave(this)" data-saved="false"> 
                             <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto">
                              Bookmark
+                        </div> -->
+                        <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
+                            <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto"> Bookmark
                         </div>
                         <a class="comment-button" href="#comment-input"> 💬 Comment</a>
                         <div> 🔗 Share</div>

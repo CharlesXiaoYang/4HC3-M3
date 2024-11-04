@@ -7,18 +7,18 @@ function toggleLike(element) {
     element.setAttribute("data-liked", !isLiked);
 }
 
-function toggleSave(element) {
-    const img = document.getElementById('bookmark')
+function toggleSave() {
+    const img = document.getElementById('bookmark');
+    const saveButton = document.getElementById("save-button");
+    const isSaved = saveButton.getAttribute("data-saved")
     // Check if the like state is true or false
-    const isSaved = element.getAttribute("data-saved") === "true";
-    if (isSaved){
-        img.src="bookmark-white.png"
+    if (isSaved==="true"){
+        img.src="bookmark.png";
     }
     else{ 
-        img.src="bookmark.png"
+        img.src="bookmark-white.png";
     }
-    // Toggle the icon and state
-    element.setAttribute("data-saved", !isSaved);
+    
 }
 
 function postComment() {
@@ -60,3 +60,46 @@ function postComment() {
         commentInput.value = "";
     }
 }
+
+function openPopup() {
+    document.getElementById("bookmark-popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("bookmark-popup").style.display = "none";
+}
+
+function confirmBookmark() {
+    const folder = document.getElementById("bookmark-folder").value;
+    const saveButton = document.getElementById("save-button");
+    const popup = document.getElementById("bookmark-popup");
+    var button1 = document.createElement("button");
+    button1.setAttribute("id",'delete-button')
+    button1.setAttribute("attribute",'Delete')
+    button1.onclick = deleteBookmark;
+    popup.appendChild(button1);
+    button1.innerHTML = "Delete"; 
+
+    console.log(button1);
+    console.log("Bookmarked in folder:", folder);
+
+    alert("Recipe bookmarked in " + folder + "!");
+    saveButton.setAttribute("data-saved", "true");
+    toggleSave();
+    closePopup();
+}
+
+function deleteBookmark() {
+    const saveButton = document.getElementById("save-button");
+    saveButton.setAttribute("data-saved", "false");
+    alert("Recipe bookmarked removed!");
+
+
+    const parent = document.getElementById("bookmark-popup");
+    const child = document.getElementById("delete-button");
+    parent.removeChild(child);
+
+    toggleSave();
+    closePopup();
+
+  }
