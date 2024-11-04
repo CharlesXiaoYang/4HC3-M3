@@ -5,25 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Best Recipes - Recipe Detail</title>
     <link rel="stylesheet" href="Homepage.css">
+    <link rel="icon" href="logo-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .middle{ 
-         display: flex;
-         gap: 100px;
-         padding-bottom: 60px;
-        }
-        .recipe-detail-header{
-            padding-bottom: 60px;
-        }
-        .comment{
-            display: flex;
-            gap: 30px;
-            padding-bottom: 40px;
-        }
+    <script src="RecipePage.js"></script>
 
-    </style>
+
 </head>
 <body>
     <div class="container">
@@ -64,14 +52,22 @@
                     <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
                     <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
 
-                    <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 400px; height: auto;">
+                    <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto">
                     <div class="recipe-meta">
-                        <span class="like-count">❤️ 1.65k likes</span>
+                        <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
+                        <div class="save-button" onclick="toggleSave(this)" data-saved="false"> 
+                            <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto">
+                             Bookmark
+                        </div>
+                        <a class="comment-button" href="#comment-input"> 💬 Comment</a>
+                        <div> 🔗 Share</div>
+
+                        
                     </div>
                 </section>
 
 
-            <div class="middle">
+            <div class="ingredient-instructions">
                 <!-- Ingredients Section -->
                 <section class="ingredients-section"> 
                     <h2>Ingredients</h2>
@@ -102,24 +98,32 @@
                 </section>
             </div>
 
-            <!-- Comments Section -->
-            <section class="comments-section">
-                <h2>Comments</h2>
-                <div class="comment">
-                    <img src="user-avatar.jpg" alt="User Avatar" class="comment-avatar">
-                    <div class="comment-content">
-                        <span class="commenter-name">User123</span>
-                        <p>This recipe was amazing! Perfect balance of sweet and spicy.</p>
-                    </div>
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <h2>Comments</h2>
+
+            <!-- New Comment Input -->
+            <div class="new-comment">
+                <input type="text"  id="comment-input" placeholder="Add a comment..." />
+                <button onclick="postComment()">Send</button>
+            </div>
+
+            <!-- Existing Comments -->
+            <div class="comment">
+                <img src="user-avatar.jpg" alt="User Avatar" class="comment-avatar">
+                <div class="comment-content">
+                    <span class="commenter-name">User123</span>
+                    <p>This recipe was amazing! Perfect balance of sweet and spicy.</p>
                 </div>
-                <div class="comment">
-                    <img src="user-avatar.jpg" alt="User Avatar" class="comment-avatar">
-                    <div class="comment-content">
-                        <span class="commenter-name">FoodLover89</span>
-                        <p>Added extra chili paste and it was just the kick I needed!</p>
-                    </div>
+            </div>
+            <div class="comment">
+                <img src="user-avatar.jpg" alt="User Avatar" class="comment-avatar">
+                <div class="comment-content">
+                    <span class="commenter-name">FoodLover89</span>
+                    <p>Added extra chili paste and it was just the kick I needed!</p>
                 </div>
-            </section>
+            </div>
+        </section>
         </main>
     </div>
 </body>

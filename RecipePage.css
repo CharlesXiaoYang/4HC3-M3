@@ -289,86 +289,6 @@ header {
 }
 
 
-.ingredient-instructions { 
-    display: flex;
-    gap: 100px;
-    padding-bottom: 60px;
-}
-
-.recipe-detail-header {
-    padding-bottom: 60px;
-}
-
-.comment {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-.recipe-meta { 
-    display: flex;
-    gap: 20px;
-    font-size: 1rem; /* Consistent size for like count */
-    color: #888;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
-.like-button:hover {
-    cursor: pointer;
-}
-
-.save-button:hover {
-    cursor: pointer;
-}
-
-.comment-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.comment-content {
-    background-color: #ededed;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.commenter-name {
-    font-weight: bold;
-}
-
-.new-comment {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-#comment-input {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.new-comment button {
-    padding: 8px 12px;
-    border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-.comment-button {
-    all: unset;
-  }
-
 @media (max-width: 768px) {
     .container {
         grid-template-areas: 
@@ -389,5 +309,17 @@ header {
         margin-bottom: 0;
         font-size: 0.9rem;
     }
-
+    .middle { 
+        display: flex;
+        gap: 100px;
+        padding-bottom: 60px;
+       }
+    .recipe-detail-header {
+        padding-bottom: 60px;
+       }
+    .comment {
+        display: flex;
+        gap: 30px;
+        padding-bottom: 40px;
+       }
 }
