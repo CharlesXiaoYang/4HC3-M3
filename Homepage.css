@@ -315,12 +315,11 @@ header {
     user-select: none; /* Standard syntax */
 }
 
-.like-button:hover {
+.like-button:hover, .comment-button:hover , .save-button:hover , .share-button:hover {
+    transition: transform 0.2s;
     cursor: pointer;
-}
-
-.save-button:hover {
-    cursor: pointer;
+    transform: scale(1.1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .comment-avatar {
@@ -392,7 +391,7 @@ header {
 .popup button {
     padding: 8px 12px;
     border: none;
-    background-color: #333;
+    background-color: #ff6f61;
     color: #fff;
     border-radius: 4px;
     margin: 5px;
@@ -462,11 +461,11 @@ header {
     font-size: 20px;
     cursor: pointer;
     border-radius: 50%;
-    border-color: #333;
-    color: #333;
+    border-color: #ff6f61;
+    color: #ff6f61;
     box-shadow: #000000;
     padding: 10px;
-    border: 3px solid grey;
+    border: 3px solid #ff6f61;
     
 }
 
@@ -474,7 +473,7 @@ header {
     margin-top: 10px;
     padding: 5px 10px;
     border: none;
-    background-color: #333;
+    background-color: #ff6f61;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
