@@ -315,11 +315,16 @@ header {
     user-select: none; /* Standard syntax */
 }
 
-.like-button:hover, .comment-button:hover , .save-button:hover , .share-button:hover {
+.like-button:hover, .comment-button:hover , .save-button:hover , .share-button:hover, .popup button:hover, .close-popup-button:hover, .carousel-arrow:hover, .share-option img:hover, .send-button:hover  {
     transition: transform 0.2s;
     cursor: pointer;
     transform: scale(1.1);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.like-button, .comment-button, .save-button, .share-button, .popup button, .close-popup-button, .carousel-arrow, .share-option img, .send-button {
+    transition: transform 0.4s, box-shadow 0.3s;
+
 }
 
 .comment-avatar {
@@ -466,6 +471,7 @@ header {
     box-shadow: #000000;
     padding: 10px;
     border: 3px solid #ff6f61;
+    width: 70px;
     
 }
 
