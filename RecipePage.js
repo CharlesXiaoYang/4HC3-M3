@@ -72,21 +72,27 @@ function closePopup() {
 function confirmBookmark() {
     const folder = document.getElementById("bookmark-folder").value;
     const saveButton = document.getElementById("save-button");
-    const popup = document.getElementById("bookmark-popup");
-    var button1 = document.createElement("button");
-    button1.setAttribute("id",'delete-button')
-    button1.setAttribute("attribute",'Delete')
-    button1.onclick = deleteBookmark;
-    popup.appendChild(button1);
-    button1.innerHTML = "Delete"; 
-
-    console.log(button1);
     console.log("Bookmarked in folder:", folder);
-
     alert("Recipe bookmarked in " + folder + "!");
     saveButton.setAttribute("data-saved", "true");
+    createDeleteButton()
     toggleSave();
     closePopup();
+}
+
+
+function createDeleteButton(){
+    var ele = document.getElementById("delete-button");
+    if(ele == null){ 
+        const popup = document.getElementById("bookmark-popup");
+        var button1 = document.createElement("button");
+        button1.setAttribute("id",'delete-button')
+        button1.setAttribute("attribute",'Delete')
+        button1.onclick = deleteBookmark;
+        popup.appendChild(button1);
+        button1.innerHTML = "Delete"; 
+        console.log(button1);
+    }
 }
 
 function deleteBookmark() {
@@ -103,3 +109,56 @@ function deleteBookmark() {
     closePopup();
 
   }
+  function openSharePopup(popupId) {
+    document.getElementById(popupId).style.display = "block";
+}
+
+function closeSharePopup(popupId) {
+    document.getElementById(popupId).style.display = "none";
+}
+
+function copyLink() {
+    const link = window.location.href;
+    navigator.clipboard.writeText(link).then(() => {
+        alert("Link copied to clipboard!");
+    });
+    closePopup("share-popup");
+}
+
+function shareOnSocial(platform) {
+    const link = encodeURIComponent(window.location.href);
+    let shareUrl = "";
+
+    switch (platform) {
+        case "facebook":
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+            break;
+        case "X":
+            shareUrl = `https://x.com/intent/post?=${link}`;
+            break;
+        case "instagram":
+            alert("Instagram sharing is not supported through the browser.");
+            return;
+        case "email":
+            shareUrl = `mailto:?subject=Check out this recipe!&body=${link}`;
+            break;
+        case "pinterest":
+            shareUrl = `https://pinterest.com/pin/create/button/?url=${link}`;
+            break;
+        case "whatsapp":
+            shareUrl = `https://api.whatsapp.com/send?text=${link}`;
+            break;
+    }
+
+    if (shareUrl) {
+        window.open(shareUrl, "_blank");
+    }
+    closePopup("share-popup");
+}
+
+// Scroll the carousel based on the direction (1 for right, -1 for left)
+function scrollCarousel(direction) {
+    const carousel = document.querySelector(".share-carousel");
+    const scrollAmount = 325; // Adjust for desired scroll distance
+    carousel.scrollLeft += direction * scrollAmount;
+}
