@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipes</title>
+    <link rel="stylesheet" href="Homepage.css">
+    <link rel="icon" href="logo-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="my-recipes.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <a href="Homepage.html" class="logo">
+                <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
+            </a>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li><button class="nav-button"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
+                <li>
+                    <button class="nav-button" onclick="location.href='post.html';">
+                        <img src="Post.png" alt="Post" class="nav-icon"> Post
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" onclick="location.href='my-recipes.html';">
+                        <img src="myrecipes.png" alt="Post" class="nav-icon"> My Recipes
+                    </button>
+                </li>                
+                <li><button class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
+                <li><button class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
+            </ul>
+            <button id="login-button" class="login-button">Login</button>
+        </nav>
+        
+        <div class="main-content">
+            <!-- My Recipes List -->
+            <div id="my-recipes-container">
+                <h2>My Recipes</h2>
+                <div id="recipe-list"></div> <!-- Recipes will be added here -->
+            </div>
+            
+            <!-- Recipe Detail View -->
+            <div id="recipe-detail-container" style="display: none;">
+                <h2 id="recipe-title"></h2>
+                <img id="recipe-photo" src="" alt="Recipe Photo" style="width: 100%; max-width: 400px; display: none;">
+                <p id="recipe-description"></p>
+                
+                <h3>Ingredients</h3>
+                <p id="recipe-ingredients"></p>
+                
+                <h3>Instructions</h3>
+                <p id="recipe-instructions"></p>
+                
+                <button id="back-to-recipes-button" class="back-to-recipes-button" onclick="goBackToList()">Back to My Recipes</button>
+                <button id="delete-recipe" class="delete-button">Delete Recipe</button> <!-- Delete Button -->
+                <button id="modify-recipe" class="modify-button">Modify Recipe</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
