@@ -22,7 +22,16 @@
             </a>
             <ul style="list-style-type: none; padding-left: 0;">
                 <li><button class="nav-button"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
-                <li><button class="nav-button"><img src="Post.png" alt="Post" class="nav-icon"> Post</button></li>
+                <li>
+                    <button class="nav-button" onclick="location.href='post.html';">
+                        <img src="Post.png" alt="Post" class="nav-icon"> Post
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" onclick="location.href='my-recipes.html';">
+                        <img src="myrecipes.png" alt="Post" class="nav-icon"> My Recipes
+                    </button>
+                </li>
                 <li><button class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
                 <li><button class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
             </ul>
@@ -57,47 +66,6 @@
             <button onclick="closePopup()">Cancel</button>
         </div>
 
-        <!-- Share Popup Menu -->
-        <div id="share-popup" class="share-popup" style="display: none;">
-            <h3>Share This Recipe</h3>
-            <div class="carousel-container">
-                <button class="carousel-arrow" onclick="scrollCarousel(-1)">&#9664;</button> <!-- Left Arrow -->
-                <div class="share-carousel">
-                    <button class="share-option" onclick="copyLink()">
-                        <img src="icons/copy-link.svg" alt="Copy Link">
-                        <span>Copy Link</span>
-                    </button>
-                    <button class="share-option" onclick="shareOnSocial('facebook')">
-                        <img src="icons/facebook.svg" alt="Facebook">
-                        <span>Facebook</span>
-                    </button>
-                    <button class="share-option" onclick="shareOnSocial('X')">
-                        <img src="icons/X.svg" alt="X">
-                        <span>X</span>
-                    </button>
-                    <button class="share-option" onclick="shareOnSocial('instagram')">
-                        <img src="icons/instagram.svg" alt="Instagram">
-                        <span>Instagram</span>
-                    </button>
-                    <button class="share-option" onclick="shareOnSocial('email')">
-                        <img src="icons/email.svg" alt="Email">
-                        <span>Email</span>
-                    </button>
-                    <button class="share-option" onclick="shareOnSocial('pinterest')">
-                        <img src="icons/pinterest.svg" alt="Pinterest">
-                        <span>Pinterest</span>
-                    </button>
-                    <button class="share-option" onclick="shareOnSocial('whatsapp')">
-                        <img src="icons/whatsapp.svg" alt="WhatsApp">
-                        <span>WhatsApp</span>
-                    </button>
-                </div>
-                <button class="carousel-arrow" onclick="scrollCarousel(1)">&#9654;</button> <!-- Right Arrow -->
-            </div>
-            <button onclick="closeSharePopup('share-popup')" class="close-popup-button">Close</button>
-        </div>
-
-
         <!-- Main content for Recipe Details -->
         <main class="main-content">
 
@@ -109,11 +77,16 @@
                     <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto">
                     <div class="recipe-meta">
                         <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
+                        <!-- <div class="save-button" onclick="toggleSave(this)" data-saved="false"> 
+                            <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto">
+                             Bookmark
+                        </div> -->
                         <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
                             <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto"> Bookmark
                         </div>
                         <a class="comment-button" href="#comment-input"> 💬 Comment</a>
-                        <div class="share-button" onclick="openSharePopup('share-popup')"> 🔗 Share</div>
+                        <div> 🔗 Share</div>
+
                         
                     </div>
                 </section>
@@ -157,7 +130,7 @@
             <!-- New Comment Input -->
             <div class="new-comment">
                 <input type="text"  id="comment-input" placeholder="Add a comment..." />
-                <button class="send-button" onclick="postComment()">Send</button>
+                <button onclick="postComment()">Send</button>
             </div>
 
             <!-- Existing Comments -->
