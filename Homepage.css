@@ -1,5 +1,5 @@
 /* Updated Homepage CSS */
-
+input{box-sizing:border-box} 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -545,10 +545,20 @@ header {
     margin-right: 10px;
 }
 
+.comments-section{
+    max-width: 80%;
+}
+
 .comment-content {
-    background-color: #ededed;
+    inline-size: 100%;
+    background-color: #fdf4e8;
     padding: 10px;
     border-radius: 5px;
+    word-break: break-all;
+    word-break: break-word;
+
+
+
 }
 
 .commenter-name {
@@ -556,27 +566,33 @@ header {
 }
 
 .new-comment {
-    display: flex;
-    align-items: center;
     margin-top: 20px;
     margin-bottom: 30px;
+    overflow-wrap: break-word;
+    
+    
+
+    
 }
 
-#comment-input {
-    flex-grow: 1;
-    padding: 8px;
+.comment-input {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
+
 }
 
-.new-comment button {
-    padding: 8px 12px;
+.send-button {
+    padding: 6px 12px;
     border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 10px;
+    margin: 5px;
     cursor: pointer;
+    width: 80px;
+    height: 32px;
+    position: relative;
 }
 
 .comment-button {
