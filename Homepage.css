@@ -6,6 +6,9 @@ textarea
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -213,8 +216,7 @@ header {
 }
 
 .input-field {
-    
-    width: 90%;
+    width: 50%;
     padding: 15px;
     margin: 15px 0;
     border: 1px solid #ddd;
@@ -265,7 +267,7 @@ header {
     width: 100%;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
     margin-top: 20px;
 }
@@ -533,7 +535,7 @@ header {
     user-select: none; /* Standard syntax */
 }
 
-.like-button:hover, .comment-button:hover , .save-button:hover , .share-button:hover, .popup button:hover, .close-popup-button:hover, .carousel-arrow:hover, .share-option img:hover, .send-button:hover  {
+.like-button:hover, .back-button-recipe:hover, .comment-button:hover , .save-button:hover , .share-button:hover, .popup button:hover, .close-popup-button:hover, .carousel-arrow:hover, .share-option img:hover, .send-button:hover  {
     transition: transform 0.2s;
     cursor: pointer;
     transform: scale(1.1);
@@ -553,7 +555,7 @@ header {
 }
 
 .comments-section{
-    max-width: 80%;
+    max-width: 70%;
 }
 
 .comment-content {
@@ -573,14 +575,43 @@ header {
     margin-top: 20px;
     margin-bottom: 30px;
     overflow-wrap: break-word;
+
     
 }
+
+.remember-me{
+    border: #000;
+    border-width: 2px;
+    width:80%;
+    text-align:center;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.remember-me label{
+    display: table-cell;
+    text-wrap: wrap;
+}
+
+.remember-me input{
+    padding-top: 10px;
+}
+    
+input[type='checkbox'] {
+    width:25px;
+    height: 25px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+
+}
+
 
 .comment-input {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
-    height:65px;
+    height:85px;
     overflow-wrap: break-word;
     resize:none
 }
@@ -1060,7 +1091,7 @@ input, textarea {
     padding: 10px;
     border: 3px solid #ff6f61;
     width: 50px;
-    opacity: 0.50;
+    opacity: 0.40;
     height: 50px;
 }
 
@@ -1070,7 +1101,7 @@ input, textarea {
     right: 1%;
     background-color: #FFEEDA;
     border: none;
-    opacity: 0.50;
+    opacity: 0.40;
     font-size: 20px;
     cursor: pointer;
     border-radius: 50%;
@@ -1092,6 +1123,25 @@ input, textarea {
     border-radius: 8px;
     height: 280px;
     width: 500px;
+}
+
+.back-button-recipe {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff6f61;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: -10;
+}
+
+.back-button-recipe svg {
+    margin-right: 5px;
+    width: 14px;
+    height: 14px;
+    fill: white;
 }
 
 @media (max-width: 768px) {
