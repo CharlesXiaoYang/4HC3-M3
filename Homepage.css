@@ -454,7 +454,42 @@ header {
 .ingredient-instructions { 
     display: flex;
     gap: 100px;
-    padding-bottom: 60px;
+    padding-left: 30px ;
+    padding-bottom: 30px;
+    background-color: #FFEEDA;
+
+
+}
+
+.ingredient-instructions ol, ul{ 
+    line-height: 30px;
+
+
+}
+
+.ingredient-instructions h2 { 
+    background-color: #e67e00;
+    display: table;
+    padding: 5px
+
+}
+
+.ingredients-section { 
+    margin-top: 30px;
+    width: 40%;
+
+
+}
+
+
+.steps-section { 
+    margin-top: 30px;
+    padding-left: 30px ;
+    background-color: #f9f9f9;
+    margin-right: 30px;
+    width: 100%;
+    
+    
 }
 
 .recipe-detail-header {
@@ -557,6 +592,16 @@ header {
 
 .popup button {
     padding: 8px 12px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.close-popup-button {
+    padding: 6px 12px;
     border: none;
     background-color: #ff6f61;
     color: #fff;
