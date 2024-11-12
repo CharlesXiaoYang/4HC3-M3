@@ -35,10 +35,12 @@
             </ul>
             <!-- Login Button -->
             <button class="login-button" id="loginBtn">Login</button>
+
             <button id="help-button" class="help-button">
                 <img src="More.jpg" alt="Help" class="nav-icon"> More
             </button>
             
+
 
             <!-- The Modal -->
             <div class="modal" id="loginModal">
@@ -58,7 +60,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="modal" id="helpModal">
                 <div class="modal-content">
                     <button class="close-button" id="closeHelpBtn">&times;</button>
@@ -73,22 +74,23 @@
                 </div>
             </div>
         
+
             <script>
                 // JavaScript to handle the modal visibility
                 const loginBtn = document.getElementById('loginBtn');
                 const loginModal = document.getElementById('loginModal');
                 const closeBtn = document.getElementById('closeBtn');
-        
+
                 // Show the modal when clicking the login button
                 loginBtn.addEventListener('click', () => {
                     loginModal.style.display = 'flex';
                 });
-        
+
                 // Close the modal when clicking the close button
                 closeBtn.addEventListener('click', () => {
                     loginModal.style.display = 'none';
                 });
-        
+
                 // Close the modal when clicking anywhere outside the modal content
                 window.addEventListener('click', (event) => {
                     if (event.target === loginModal) {
@@ -96,6 +98,7 @@
                     }
                 });
             </script>
+
             <script>
                 // JavaScript to handle the help modal visibility
                 const helpBtn = document.getElementById('help-button');
@@ -119,6 +122,7 @@
                     }
                 });
             </script>
+
 
         </nav>
         
