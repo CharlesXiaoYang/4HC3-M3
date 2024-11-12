@@ -1,0 +1,1175 @@
+/* Updated Homepage CSS */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid #e0e0e0;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 20px; /* Space between the search bar and the button */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Set a reasonable width for the search container */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding-left: 10px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+.find-stores-button {
+    padding: 8px 12px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+}
+
+.find-stores-button:hover {
+    background-color: #e55a4f;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.search-button img {
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.nav-button {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.nav-button.active {
+    background-color: #f9f9f9;
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+    background-color: #f9f9f9;
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.login-button {
+    width: 80%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the modal (popup window) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-field {
+    
+    width: 90%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.input-field:focus {
+    border-color: #ff6f61;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.close-button:hover {
+    color: #ff6f61;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns everything to the start */
+    margin: 20px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.remember-me input {
+    margin-right: 10px; /* Decrease the margin to bring the text closer to the checkbox */
+}
+
+.action-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+.action-button:hover {
+    background-color: #ff5a50;
+    transform: scale(1.05);
+}
+
+.signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    color: #ff5a50;
+    text-decoration: underline;
+}
+/* Styles for the modal (popup window)  END*/
+
+.notification-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.notification-message {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.notification-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.message-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.message-date {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.recommendation-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.category-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Center text */
+    padding: 3px 10px; /* Smaller padding for a compact button size */
+    margin: 0 3px; /* Reduced space between buttons */
+    font-size: 0.8rem; /* Smaller font size */
+    background-color: transparent; /* Match main content background color */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: #444; /* Text color */
+}
+
+/* Hover effect for .category-button */
+.category-button:hover {
+    background-color: #f9f9f9; /* Light background color on hover */
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state for .category-button (optional) */
+.category-button.active {
+    background-color: #f9f9f9; /* Indicating active selection */
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.recipe-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.recipe-card {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden; /* Ensure the image doesn't overflow outside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-title {
+    font-size: 1rem; /* Made the title smaller */
+    color: #444; /* Softer color for the title */
+    text-align: center;
+    margin: 8px 0; /* Reduced margin for tighter spacing */
+}
+
+.poster-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px; /* Limit the width of the poster info to match the card */
+    padding: 5px 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.poster-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.poster-name {
+    font-size: 0.8rem; /* Made user name smaller */
+    color: #666; /* Softer color for the user name */
+    margin-right: auto;
+}
+
+.like-count {
+    font-size: 0.8rem; /* Consistent size for like count */
+    color: #888;
+}
+
+
+.ingredient-instructions { 
+    display: flex;
+    gap: 100px;
+    padding-bottom: 60px;
+}
+
+.recipe-detail-header {
+    padding-bottom: 60px;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.recipe-meta { 
+    display: flex;
+    gap: 20px;
+    font-size: 1rem; /* Consistent size for like count */
+    color: #888;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.like-button:hover, .comment-button:hover , .save-button:hover , .share-button:hover, .popup button:hover, .close-popup-button:hover, .carousel-arrow:hover, .share-option img:hover, .send-button:hover  {
+    transition: transform 0.2s;
+    cursor: pointer;
+    transform: scale(1.1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.like-button, .comment-button, .save-button, .share-button, .popup button, .close-popup-button, .carousel-arrow, .share-option img, .send-button {
+    transition: transform 0.4s, box-shadow 0.3s;
+
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-content {
+    background-color: #ededed;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.commenter-name {
+    font-weight: bold;
+}
+
+.new-comment {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#comment-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.new-comment button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-button {
+    all: unset;
+  }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+}
+
+.popup select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.popup button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+.share-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 500px;
+    text-align: center;
+}
+
+.share-popup select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Carousel container with arrows */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.share-carousel {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.share-option {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.share-option img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.share-option span {
+    display: block;
+    font-size: 12px;
+}
+
+/* Arrows */
+.carousel-arrow {
+    background-color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: #ff6f61;
+    color: #ff6f61;
+    box-shadow: #000000;
+    padding: 10px;
+    border: 3px solid #ff6f61;
+    width: 70px;
+}
+
+/* Set all labels, inputs, and buttons to display in a column */
+#recipeForm label {
+    font-weight: bold; /* Make labels bold */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+#recipeForm input[type="text"],
+#recipeForm textarea,
+#recipeForm input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px; /* Add space between fields */
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Increase font size */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
+}
+
+/* Change border color and shadow on focus */
+#recipeForm input[type="text"]:focus,
+#recipeForm textarea:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Additional styling for buttons */
+#recipeForm button:not(.remove-button) {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners for buttons */
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+#recipeForm button:not(.remove-button):hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Styling for remove buttons */
+.remove-button {
+    display: block; /* Ensures the button takes the full width */
+    width: 100%; /* Makes the button the same width as input fields */
+    padding: 10px; /* Increase padding for consistency */
+    background-color: #f44336; /* Remove button color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners for remove buttons */
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+    margin-bottom: 15px; /* Add space below the button */
+}
+
+/* Hover effect for remove buttons */
+.remove-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Styling the preview section */
+#previewSection {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners for preview section */
+    background-color: #f9f9f9;
+}
+
+/* Ingredient-quantity row styling */
+.ingredient-container {
+    display: flex;
+    align-items: center;
+}
+
+.ingredient-input {
+    width: 60%; /* Larger width for ingredient field */
+    margin-right: 8px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.quantity-input {
+    width: 40%; /* Smaller width for quantity field */
+    max-width: 160px; /* Optional max width to prevent it from getting too small */
+    margin-right: 8px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Change border color and shadow on focus for ingredient and quantity inputs */
+.ingredient-input:focus,
+.quantity-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+
+
+/*For my-recipes.html*/
+/* Container styling */
+#my-recipes-container, #recipe-detail-container {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#my-recipes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.recipe-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail image styling */
+.recipe-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Recipe title styling */
+.recipe-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+}
+
+.recipe-title:hover {
+    color: #007bff;
+}
+
+/* Detail container styling */
+#recipe-detail-container {
+    display: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+#recipe-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#recipe-photo {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+#recipe-description {
+    font-size: 14px; /* Slightly smaller font size to make it fit better */
+    color: #555;
+    margin-bottom: 15px; /* Reduced margin to bring elements closer */
+    text-align: justify; /* Keeps text aligned and neat */
+    line-height: 1.5; /* Adds line height for better readability */
+    max-width: 90%; /* Restricts width to 90% of the container, leaving some padding */
+    margin-left: auto; /* Centers the content horizontally */
+    margin-right: auto; /* Centers the content horizontally */
+    padding: 0 10px; /* Optional padding for a little space on sides */
+}
+
+#recipe-ingredients, #recipe-instructions {
+    font-size: 16px;
+    color: #444;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* Headers for sections */
+#recipe-detail-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.recipe-item {
+    margin-bottom: 20px;
+}
+
+.recipe-thumbnail {
+    width: 100px; /* or any size you prefer */
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.recipe-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modify-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.modify-button:hover {
+    background-color: #45a049;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+}
+
+
+.back-to-recipes-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.back-to-recipes-button:hover {
+    background-color: #e53935;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto auto;
+    }
+    .sidebar {
+        grid-area: sidebar;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .nav-button {
+        padding: 5px;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+    }
+
+}
+
+
+
+
+/* Styling for form elements */
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 20px; /* Add consistent gap between form elements */
+    width: 100%; /* Ensure the form takes up the full width */
+    max-width: 800px; /* Optional: Max width for a more compact form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Label styling */
+form label {
+    font-size: 16px;
+    margin-bottom: 8px; /* Space between label and input/textarea */
+    color: #555; /* Slightly dark color for better readability */
+}
+
+/* Input and textarea styling */
+form input,
+form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust for textarea specifically */
+form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Set a minimum height */
+}
+
+/* Spacing for ingredients and instructions sections */
+.add-ingredient-container,
+.add-instruction-container {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+/* Consistent margin for buttons */
+.add-ingredient-container button,
+.add-instruction-container button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add spacing between button and previous element */
+}
+
+/* Hover effect for buttons */
+.add-ingredient-container button:hover,
+.add-instruction-container button:hover {
+    background-color: #45a049;
+}
+
+/* Instructions list styling */
+#instructionsList {
+    margin-top: 10px; /* Ensure space between instructions list and button */
+}
+
+
+/* Styling for the title */
+#recipeForm h1 {
+    text-align: center; /* Center the title */
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-bottom: 20px; /* Space between title and form */
+    color: #333; /* Darker color for the title */
+}
+
+/* Make the instruction div a flexbox to align items horizontally */
+.instruction-item {
+    display: flex;
+    align-items: center; /* Vertically center the textarea and button */
+    margin-bottom: 10px; /* Space between instructions */
+}
+
+/* Ensure that the remove button (trash icon) stays on the right */
+.instruction-item button {
+    margin-left: auto; /* Push the remove button to the right */
+    padding: 0; /* Remove any extra padding around the button */
+    background-color: transparent; /* Remove button background */
+    border: none; /* Remove the button border */
+}
+
+/* Optional: Style the trash icon if needed */
+.instruction-item button img {
+    width: 16px;
+    height: auto;
+}
+
+
+/* Style the add buttons */
+.add-ingredient-container button {
+    display: flex;
+    align-items: center; /* Align the image and text horizontally */
+    margin-top: 10px; /* Space between ingredients/instructions and the button */
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-instruction-container button {
+    display: flex;
+    align-items: center; /* Align the image and text horizontally */
+    margin-top: 10px; /* Space between ingredients/instructions and the button */
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the add icon (image) */
+.add-icon {
+    width: 20px; /* Adjust image size */
+    margin-right: 8px; /* Space between image and text */
+}
+
+/* Optional: Button hover effect */
+.add-instruction-container button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Style the add icon (image) */
+.add-icon {
+    width: 20px; /* Adjust image size */
+    margin-right: 8px; /* Space between image and text */
+}
+
+/* Optional: Button hover effect */
+.add-ingredient-container button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+#recipeForm input[type="text"],
+#recipeForm textarea,
+#recipeForm input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px; /* Add space between fields */
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Increase font size */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
+}
+
+/* Change border color and shadow on focus */
+#recipeForm input[type="text"]:focus,
+#recipeForm textarea:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Additional styling for buttons */
+#recipeForm button:not(.remove-button) {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners for buttons */
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+#recipeForm button:not(.remove-button):hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+
