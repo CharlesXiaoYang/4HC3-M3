@@ -1,5 +1,12 @@
 /* Updated Homepage CSS */
 input{box-sizing:border-box} 
+textarea  
+{  
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;  
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -556,9 +563,6 @@ header {
     border-radius: 5px;
     word-break: break-all;
     word-break: break-word;
-
-
-
 }
 
 .commenter-name {
@@ -570,16 +574,15 @@ header {
     margin-bottom: 30px;
     overflow-wrap: break-word;
     
-    
-
-    
 }
 
 .comment-input {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
-
+    height:65px;
+    overflow-wrap: break-word;
+    resize:none
 }
 
 .send-button {
