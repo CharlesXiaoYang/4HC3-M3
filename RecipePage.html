@@ -21,7 +21,7 @@
                 <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
             </a>
             <ul style="list-style-type: none; padding-left: 0;">
-                <li><button class="nav-button"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
+                <li><button class="nav-button active" onclick="location.href='Homepage.html'"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
                 <li>
                     <button class="nav-button" onclick="location.href='post.html';">
                         <img src="Post.png" alt="Post" class="nav-icon"> Post
@@ -31,9 +31,9 @@
                     <button class="nav-button" onclick="location.href='my-recipes.html';">
                         <img src="myrecipes.png" alt="Post" class="nav-icon"> My Recipes
                     </button>
-                </li>                
+                </li>                    
                 <li><button class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
-                <li><button class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
+                <li><button id="me-button" class="nav-button" onclick="location.href='Profile.HTML'"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
             </ul>
             <button id="login-button" class="login-button">Login</button>
         </nav>

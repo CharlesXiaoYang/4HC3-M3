@@ -17,7 +17,10 @@
                 <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
             </a>
             <ul style="list-style-type: none; padding-left: 0;">
-                <li><button id="find-button" class="nav-button active"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
+                <li><button id="find-button" class="nav-button active" onclick="location.href='Homepage.html'">
+                        <img src="Discover.png" alt="Discover" class="nav-icon"> Discover
+                    </button>
+                </li>
                 <li>
                     <button class="nav-button" onclick="location.href='post.html';">
                         <img src="Post.png" alt="Post" class="nav-icon"> Post
@@ -28,10 +31,57 @@
                         <img src="myrecipes.png" alt="Post" class="nav-icon"> My Recipes
                     </button>
                 </li> 
-                <li><button id="notification-button" class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
-                <li><button id="me-button" class="nav-button"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
+                <li><button id="notification-button" class="nav-button" onclick="location.href='Notification.HTML'"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
+                <li><button id="me-button" class="nav-button" onclick="location.href='Profile.HTML'"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
             </ul>
-            <button id="login-button" class="login-button">Login</button>
+
+                    <!-- Login Button -->
+                    <button class="login-button" id="loginBtn">Login</button>
+
+                    <!-- The Modal -->
+                    <div class="modal" id="loginModal">
+                        <div class="modal-content">
+                            <button class="close-button" id="closeBtn">&times;</button>
+                            <h2>Login</h2>
+                            <input type="text" class="input-field" placeholder="Enter Phone Number">
+                            <input type="text" class="input-field" placeholder="Enter Verification Code">
+                            <button class="action-button" id="getCodeBtn">Get Verification Code</button>
+                            <div class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">I have read and agree to the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <button class="action-button" id="loginActionBtn">Login</button>
+                            <div class="signup-text">
+                                New users can directly <a href="#">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // JavaScript to handle the modal visibility
+                        const loginBtn = document.getElementById('loginBtn');
+                        const loginModal = document.getElementById('loginModal');
+                        const closeBtn = document.getElementById('closeBtn');
+                
+                        // Show the modal when clicking the login button
+                        loginBtn.addEventListener('click', () => {
+                            loginModal.style.display = 'flex';
+                        });
+                
+                        // Close the modal when clicking the close button
+                        closeBtn.addEventListener('click', () => {
+                            loginModal.style.display = 'none';
+                        });
+                
+                        // Close the modal when clicking anywhere outside the modal content
+                        window.addEventListener('click', (event) => {
+                            if (event.target === loginModal) {
+                                loginModal.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
         </nav>
         
         <header>
@@ -44,7 +94,7 @@
                         </button>
                     </div>
                 </div>
-                <button type="button" class="find-stores-button">Find stores near me</button>
+                <button type="button" class="find-stores-button" onclick="location.href='Map.HTML'">Find stores near me</button>
             </div>
         </header>
         
@@ -61,6 +111,21 @@
                 <button class="category-button">Noodles</button>
                 <button class="category-button">BBQ</button>
             </div>
+            <script>
+                // Get all the category buttons
+                const buttons = document.querySelectorAll('.category-button');
+        
+                // Add click event listener to each button
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove 'active' class from all buttons
+                        buttons.forEach(btn => btn.classList.remove('active'));
+        
+                        // Add 'active' class to the clicked button
+                        button.classList.add('active');
+                    });
+                });
+            </script>
             <div class="recipe-grid">
                 <div class="recipe-card-container">
                     <section class="recipe-card">
