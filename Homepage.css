@@ -1,5 +1,15 @@
 /* Updated Homepage CSS */
-
+input{box-sizing:border-box} 
+textarea  
+{  
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -206,8 +216,7 @@ header {
 }
 
 .input-field {
-    
-    width: 90%;
+    width: 50%;
     padding: 15px;
     margin: 15px 0;
     border: 1px solid #ddd;
@@ -258,7 +267,7 @@ header {
     width: 100%;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
     margin-top: 20px;
 }
@@ -454,12 +463,59 @@ header {
 .ingredient-instructions { 
     display: flex;
     gap: 100px;
-    padding-bottom: 60px;
+    padding-left: 30px ;
+    padding-bottom: 30px;
+    background-color: #FFEEDA;
+    border-radius: 8px;
+
+
+}
+
+.ingredient-instructions ol, ul{ 
+    line-height: 30px;
+
+
+}
+
+.ingredient-instructions h2 { 
+    background-color: #e67e00;
+    display: table;
+    padding: 5px;
+    border-radius: 2px;
+
+}
+
+.ingredients-section { 
+    margin-top: 30px;
+    width: 40%;
+
+
+}
+
+
+.steps-section { 
+    margin-top: 30px;
+    padding-left: 30px ;
+    background-color: #f9f9f9;
+    margin-right: 30px;
+    width: 100%;
+    border-radius: 4px;
+    
+    
 }
 
 .recipe-detail-header {
     padding-bottom: 60px;
 }
+
+.media {
+    display:flex;
+    gap: 30px;
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+
 
 .comment {
     display: flex;
@@ -470,6 +526,8 @@ header {
 .recipe-meta { 
     display: flex;
     gap: 20px;
+    padding-top: 5px;
+    padding-left: 30px;
     font-size: 1rem; /* Consistent size for like count */
     color: #888;
     -webkit-user-select: none; /* Safari */
@@ -477,7 +535,7 @@ header {
     user-select: none; /* Standard syntax */
 }
 
-.like-button:hover, .comment-button:hover , .save-button:hover , .share-button:hover, .popup button:hover, .close-popup-button:hover, .carousel-arrow:hover, .share-option img:hover, .send-button:hover  {
+.like-button:hover, .back-button-recipe:hover, .comment-button:hover , .save-button:hover , .share-button:hover, .popup button:hover, .close-popup-button:hover, .carousel-arrow:hover, .share-option img:hover, .send-button:hover  {
     transition: transform 0.2s;
     cursor: pointer;
     transform: scale(1.1);
@@ -496,10 +554,17 @@ header {
     margin-right: 10px;
 }
 
+.comments-section{
+    max-width: 70%;
+}
+
 .comment-content {
-    background-color: #ededed;
+    inline-size: 100%;
+    background-color: #fdf4e8;
     padding: 10px;
     border-radius: 5px;
+    word-break: break-all;
+    word-break: break-word;
 }
 
 .commenter-name {
@@ -507,27 +572,61 @@ header {
 }
 
 .new-comment {
-    display: flex;
-    align-items: center;
     margin-top: 20px;
     margin-bottom: 30px;
+    overflow-wrap: break-word;
+
+    
 }
 
-#comment-input {
-    flex-grow: 1;
-    padding: 8px;
+.remember-me{
+    border: #000;
+    border-width: 2px;
+    width:80%;
+    text-align:center;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.remember-me label{
+    display: table-cell;
+    text-wrap: wrap;
+}
+
+.remember-me input{
+    padding-top: 10px;
+}
+    
+input[type='checkbox'] {
+    width:25px;
+    height: 25px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+
+}
+
+
+.comment-input {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
+    height:85px;
+    overflow-wrap: break-word;
+    resize:none
 }
 
-.new-comment button {
-    padding: 8px 12px;
+.send-button {
+    padding: 6px 12px;
     border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 10px;
+    margin: 5px;
     cursor: pointer;
+    width: 80px;
+    height: 32px;
+    position: relative;
 }
 
 .comment-button {
@@ -557,6 +656,16 @@ header {
 
 .popup button {
     padding: 8px 12px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.close-popup-button {
+    padding: 6px 12px;
     border: none;
     background-color: #ff6f61;
     color: #fff;
@@ -633,7 +742,8 @@ header {
     box-shadow: #000000;
     padding: 10px;
     border: 3px solid #ff6f61;
-    width: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 /* Set all labels, inputs, and buttons to display in a column */
@@ -943,6 +1053,95 @@ input, textarea {
     padding: 8px;
     margin: 5px 0;
     border: 1px solid #ddd;
+}
+
+/* Carousel container styling */
+.carousel-main {
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+}
+
+
+.carousel-image-main {
+    display: none;
+    width: 500px;
+    height: 500px;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+    object-fit: contain;
+    background-color: #FFEEDA;
+    
+
+}
+
+.picture-arrow-left {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    background-color: #FFEEDA;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: #ff6f61;
+    color: #ff6f61;
+    box-shadow: #000000;
+    padding: 10px;
+    border: 3px solid #ff6f61;
+    width: 50px;
+    opacity: 0.40;
+    height: 50px;
+}
+
+.picture-arrow-right {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    background-color: #FFEEDA;
+    border: none;
+    opacity: 0.40;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: #ff6f61;
+    color: #ff6f61;
+    box-shadow: #000000;
+    padding: 10px;
+    border: 3px solid #ff6f61;
+    width: 50px;
+    height: 50px;
+}
+
+.picture-arrow-right:hover, .picture-arrow-left:hover  {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.video {
+    border-radius: 8px;
+    height: 280px;
+    width: 500px;
+}
+
+.back-button-recipe {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ff6f61;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: -10;
+}
+
+.back-button-recipe svg {
+    margin-right: 5px;
+    width: 14px;
+    height: 14px;
+    fill: white;
 }
 
 @media (max-width: 768px) {

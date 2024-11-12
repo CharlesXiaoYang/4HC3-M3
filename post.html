@@ -33,7 +33,51 @@
                 <li><button class="nav-button" onclick="location.href='Notification.html'"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
                 <li><button id="me-button" class="nav-button" onclick="location.href='Profile.HTML'"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
             </ul>
-            <button id="login-button" class="login-button">Login</button>
+            <!-- Login Button -->
+            <button class="login-button" id="loginBtn">Login</button>
+
+            <!-- The Modal -->
+            <div class="modal" id="loginModal">
+                <div class="modal-content">
+                    <button class="close-button" id="closeBtn">&times;</button>
+                    <h2>Login</h2>
+                    <input type="text" class="input-field" placeholder="Enter Phone Number">
+                    <input type="text" class="input-field" placeholder="Enter Verification Code">
+                    <button class="action-button" id="getCodeBtn">Get Verification Code</button>
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">I have read and agree to the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <button class="action-button" id="loginActionBtn">Login</button>
+                    <div class="signup-text">
+                        New users can directly <a href="#">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // JavaScript to handle the modal visibility
+                const loginBtn = document.getElementById('loginBtn');
+                const loginModal = document.getElementById('loginModal');
+                const closeBtn = document.getElementById('closeBtn');
+
+                // Show the modal when clicking the login button
+                loginBtn.addEventListener('click', () => {
+                    loginModal.style.display = 'flex';
+                });
+
+                // Close the modal when clicking the close button
+                closeBtn.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                });
+
+                // Close the modal when clicking anywhere outside the modal content
+                window.addEventListener('click', (event) => {
+                    if (event.target === loginModal) {
+                        loginModal.style.display = 'none';
+                    }
+                });
+            </script>
         </nav>
         
         <div class="main-content">

@@ -15,28 +15,78 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar Navigation -->
-        <nav class="sidebar">
-            <a href="Homepage.html" class="logo">
-                <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
-            </a>
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li><button class="nav-button active" onclick="location.href='Homepage.html'"><img src="Discover.png" alt="Discover" class="nav-icon"> Discover</button></li>
-                <li>
-                    <button class="nav-button" onclick="location.href='post.html';">
-                        <img src="Post.png" alt="Post" class="nav-icon"> Post
-                    </button>
-                </li>
-                <li>
-                    <button class="nav-button" onclick="location.href='my-recipes.html';">
-                        <img src="myrecipes.png" alt="Post" class="nav-icon"> My Recipes
-                    </button>
-                </li>                    
-                <li><button class="nav-button"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
-                <li><button id="me-button" class="nav-button" onclick="location.href='Profile.HTML'"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
-            </ul>
-            <button id="login-button" class="login-button">Login</button>
-        </nav>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <a href="Homepage.html" class="logo">
+            <img src="logo.png" alt="The Best Recipes" style="width: 150px; height: auto;">
+        </a>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><button id="find-button" class="nav-button active" onclick="location.href='Homepage.html'">
+                    <img src="Discover.png" alt="Discover" class="nav-icon"> Discover
+                </button>
+            </li>
+            <li>
+                <button class="nav-button" onclick="location.href='post.html';">
+                    <img src="Post.png" alt="Post" class="nav-icon"> Post
+                </button>
+            </li>
+            <li>
+                <button class="nav-button" onclick="location.href='my-recipes.html';">
+                    <img src="myrecipes.png" alt="Post" class="nav-icon"> My Recipes
+                </button>
+            </li> 
+            <li><button id="notification-button" class="nav-button" onclick="location.href='Notification.HTML'"><img src="Notifications.png" alt="Notifications" class="nav-icon"> Notifications</button></li>
+            <li><button id="me-button" class="nav-button" onclick="location.href='Profile.HTML'"><img src="Profile.png" alt="Profile" class="nav-icon"> Profile</button></li>
+        </ul>
+
+                <!-- Login Button -->
+                <button class="login-button" id="loginBtn">Login</button>
+
+                <!-- The Modal -->
+                <div class="modal" id="loginModal">
+                    <div class="modal-content">
+                        <button class="close-button" id="closeBtn">&times;</button>
+                        <h2>Login</h2>
+                        <input type="text" class="input-field" placeholder="Enter Phone Number">
+                        <input type="text" class="input-field" placeholder="Enter Verification Code">
+                        <button class="action-button" id="getCodeBtn">Get Verification Code</button>
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">I have read and agree to the <a href="#">User Agreement</a> and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button class="action-button" id="loginActionBtn">Login</button>
+                        <div class="signup-text">
+                            New users can directly <a href="#">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <script>
+                    // JavaScript to handle the modal visibility
+                    const loginBtn = document.getElementById('loginBtn');
+                    const loginModal = document.getElementById('loginModal');
+                    const closeBtn = document.getElementById('closeBtn');
+            
+                    // Show the modal when clicking the login button
+                    loginBtn.addEventListener('click', () => {
+                        loginModal.style.display = 'flex';
+                    });
+            
+                    // Close the modal when clicking the close button
+                    closeBtn.addEventListener('click', () => {
+                        loginModal.style.display = 'none';
+                    });
+            
+                    // Close the modal when clicking anywhere outside the modal content
+                    window.addEventListener('click', (event) => {
+                        if (event.target === loginModal) {
+                            loginModal.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+    </nav>
 
         <!-- Header with search bar and store button -->
         <header>
@@ -109,13 +159,34 @@
 
         <!-- Main content for Recipe Details -->
         <main class="main-content">
-
+            <a href="Homepage.html" class="back-button-recipe">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15 6l-6 6 6 6"></path>
+                </svg>
+                Go Back
+            </a>
                 <!-- Recipe Title and Image -->
                 <section class="recipe-detail-header">
-                    <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
-                    <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
+                        <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
+                        <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
+                        <div class="media">
+                            <div class="carousel-main">
+                                <div class="carousel-images-main">
+                                    <button class="carousel-arrow picture-arrow-left" onclick="prevImage()">&#9664;</button>
+                                    <button class="carousel-arrow picture-arrow-right" onclick="nextImage()">&#9654;</button>
 
-                    <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto">
+                                    <img src="Kung_Pao_Chicken1.jpg" alt="Kung_Pao_Chicken1" class="carousel-image-main" style="display: block;">
+                                    <img src="Kung_Pao_Chicken2.jpg" alt="Kung_Pao_Chicken2" class="carousel-image-main">
+                                    <img src="Kung_Pao_Chicken3.jpg" alt="Kung_Pao_Chicken3" class="carousel-image-main">
+                                </div>
+                            </div>
+                        <iframe class="video"
+                            src="https://www.youtube.com/embed/n4W2g_IUY3I">
+                        </iframe>
+                        </div>
+
+
+                    <!-- <img src="kung_pao_chicken1.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto"> -->
                     <div class="recipe-meta">
                         <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
                         <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
@@ -147,6 +218,7 @@
 
                 <!-- Steps Section -->
                 <section class="steps-section">
+                    <div class="steps-instructions">
                     <h2>Instructions</h2>
                     <ol>
                         <li>In a bowl, mix soy sauce, rice vinegar, sugar, and garlic to make the marinade.</li>
@@ -156,16 +228,19 @@
                         <li>Add chili paste for extra heat, if desired, and cook for an additional 2-3 minutes.</li>
                         <li>Serve hot over rice, garnished with extra green onions if desired.</li>
                     </ol>
+                    </div>
                 </section>
             </div>
 
+
+
         <!-- Comments Section -->
-        <section class="comments-section">
+        <div class="comments-section">
             <h2>Comments</h2>
 
             <!-- New Comment Input -->
             <div class="new-comment">
-                <input type="text"  id="comment-input" placeholder="Add a comment..." />
+                <textarea type="text"  id="comment-input" class="comment-input" placeholder="Add a comment..." ></textarea>
                 <button class="send-button" onclick="postComment()">Send</button>
             </div>
 
@@ -184,7 +259,7 @@
                     <p>Added extra chili paste and it was just the kick I needed!</p>
                 </div>
             </div>
-        </section>
+        </div>
         </main>
     </div>
 </body>
