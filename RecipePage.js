@@ -162,3 +162,35 @@ function scrollCarousel(direction) {
     const scrollAmount = 325; // Adjust for desired scroll distance
     carousel.scrollLeft += direction * scrollAmount;
 }
+
+let currentImageIndex = 0;
+let images = document.querySelectorAll('.carousel-image-main');
+
+function updateCarousel() {
+    images = document.querySelectorAll('.carousel-image-main');
+    console.log(images)
+    // Hide all images
+    images.forEach((img) => {
+        img.style.display = 'none';
+        
+    });
+    // Show the current image
+
+    images[currentImageIndex].style.display = 'block';
+    
+}
+
+function nextImage() {
+    images = document.querySelectorAll('.carousel-image-main');
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateCarousel();
+}
+
+function prevImage() {
+    images = document.querySelectorAll('.carousel-image-main');
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateCarousel();
+}
+
+// Initialize carousel by showing the first image
+updateCarousel();
