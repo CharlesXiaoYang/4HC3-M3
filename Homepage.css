@@ -457,6 +457,7 @@ header {
     padding-left: 30px ;
     padding-bottom: 30px;
     background-color: #FFEEDA;
+    border-radius: 8px;
 
 
 }
@@ -470,7 +471,8 @@ header {
 .ingredient-instructions h2 { 
     background-color: #e67e00;
     display: table;
-    padding: 5px
+    padding: 5px;
+    border-radius: 2px;
 
 }
 
@@ -488,6 +490,7 @@ header {
     background-color: #f9f9f9;
     margin-right: 30px;
     width: 100%;
+    border-radius: 4px;
     
     
 }
@@ -495,6 +498,15 @@ header {
 .recipe-detail-header {
     padding-bottom: 60px;
 }
+
+.media {
+    display:flex;
+    gap: 30px;
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+
 
 .comment {
     display: flex;
@@ -505,6 +517,8 @@ header {
 .recipe-meta { 
     display: flex;
     gap: 20px;
+    padding-top: 5px;
+    padding-left: 30px;
     font-size: 1rem; /* Consistent size for like count */
     color: #888;
     -webkit-user-select: none; /* Safari */
@@ -678,7 +692,8 @@ header {
     box-shadow: #000000;
     padding: 10px;
     border: 3px solid #ff6f61;
-    width: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 /* Set all labels, inputs, and buttons to display in a column */
@@ -988,6 +1003,76 @@ input, textarea {
     padding: 8px;
     margin: 5px 0;
     border: 1px solid #ddd;
+}
+
+/* Carousel container styling */
+.carousel-main {
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+}
+
+
+.carousel-image-main {
+    display: none;
+    width: 500px;
+    height: 500px;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+    object-fit: contain;
+    background-color: #FFEEDA;
+    
+
+}
+
+.picture-arrow-left {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    background-color: #FFEEDA;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: #ff6f61;
+    color: #ff6f61;
+    box-shadow: #000000;
+    padding: 10px;
+    border: 3px solid #ff6f61;
+    width: 50px;
+    opacity: 0.50;
+    height: 50px;
+}
+
+.picture-arrow-right {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    background-color: #FFEEDA;
+    border: none;
+    opacity: 0.50;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border-color: #ff6f61;
+    color: #ff6f61;
+    box-shadow: #000000;
+    padding: 10px;
+    border: 3px solid #ff6f61;
+    width: 50px;
+    height: 50px;
+}
+
+.picture-arrow-right:hover, .picture-arrow-left:hover  {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.video {
+    border-radius: 8px;
+    height: 280px;
+    width: 500px;
 }
 
 @media (max-width: 768px) {

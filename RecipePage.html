@@ -112,10 +112,26 @@
 
                 <!-- Recipe Title and Image -->
                 <section class="recipe-detail-header">
-                    <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
-                    <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
+                        <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
+                        <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
+                        <div class="media">
+                            <div class="carousel-main">
+                                <div class="carousel-images-main">
+                                    <button class="carousel-arrow picture-arrow-left" onclick="prevImage()">&#9664;</button>
+                                    <button class="carousel-arrow picture-arrow-right" onclick="nextImage()">&#9654;</button>
 
-                    <img src="kung pao chicken.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto">
+                                    <img src="Kung_Pao_Chicken1.jpg" alt="Kung_Pao_Chicken1" class="carousel-image-main" style="display: block;">
+                                    <img src="Kung_Pao_Chicken2.jpg" alt="Kung_Pao_Chicken2" class="carousel-image-main">
+                                    <img src="Kung_Pao_Chicken3.jpg" alt="Kung_Pao_Chicken3" class="carousel-image-main">
+                                </div>
+                            </div>
+                        <iframe class="video"
+                            src="https://www.youtube.com/embed/n4W2g_IUY3I">
+                        </iframe>
+                        </div>
+
+
+                    <!-- <img src="kung_pao_chicken1.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto"> -->
                     <div class="recipe-meta">
                         <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
                         <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
@@ -131,7 +147,7 @@
             <div class="ingredient-instructions">
                 <!-- Ingredients Section -->
                 <section class="ingredients-section"> 
-                    <h2>INGREDIENTS</h2>
+                    <h2>Ingredients</h2>
                     <ul>
                         <li>1 lb chicken breast, cubed</li>
                         <li>1/2 cup peanuts</li>
@@ -148,18 +164,20 @@
                 <!-- Steps Section -->
                 <section class="steps-section">
                     <div class="steps-instructions">
-                        <h2>INSTRUCTIONS</h2>
-                        <ol>
-                            <li>In a bowl, mix soy sauce, rice vinegar, sugar, and garlic to make the marinade.</li>
-                            <li>Marinate chicken cubes for at least 15 minutes.</li>
-                            <li>Heat a pan over medium-high heat and add a small amount of oil.</li>
-                            <li>Sauté the chicken until cooked through, then add the peanuts, bell pepper, and green onions.</li>
-                            <li>Add chili paste for extra heat, if desired, and cook for an additional 2-3 minutes.</li>
-                            <li>Serve hot over rice, garnished with extra green onions if desired.</li>
-                        </ol>
+                    <h2>Instructions</h2>
+                    <ol>
+                        <li>In a bowl, mix soy sauce, rice vinegar, sugar, and garlic to make the marinade.</li>
+                        <li>Marinate chicken cubes for at least 15 minutes.</li>
+                        <li>Heat a pan over medium-high heat and add a small amount of oil.</li>
+                        <li>Sauté the chicken until cooked through, then add the peanuts, bell pepper, and green onions.</li>
+                        <li>Add chili paste for extra heat, if desired, and cook for an additional 2-3 minutes.</li>
+                        <li>Serve hot over rice, garnished with extra green onions if desired.</li>
+                    </ol>
                     </div>
                 </section>
             </div>
+
+
 
         <!-- Comments Section -->
         <section class="comments-section">
