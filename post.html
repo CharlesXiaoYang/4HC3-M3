@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Recipe</title>
-    <link rel="stylesheet" href="Homepage.css">
+    <link rel="stylesheet" href="post.css">
     <link rel="icon" href="logo-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,33 +124,34 @@
         </nav>
         
         <div class="main-content">
-            <h2>Post a New Recipe</h2>
             <form id="recipeForm">
+                <h1>Post a New Recipe</h1>
+
                 <label>Recipe Title:</label>
-                <input type="text" id="title" placeholder="Enter recipe title" required>
+                <input type="text" id="title" placeholder="Enter recipe title like Mom Chocolate cake recipe" required>
                 
                 <label>Description:</label>
-                <textarea id="description" placeholder="Write a brief description" required></textarea>
+                <textarea id="description" placeholder="Write a brief description like This is the recipe of my mother with a lot of butter!" required></textarea>
                 
                 <label>Ingredients:</label>
                 <div id="ingredientsList">
                 </div>
                 <div class="add-ingredient-container">
-                    <button type="button" onclick="addIngredient()">+ Add Ingredient</button>
+
                 </div>
+                
                 <label>Instructions:</label>
                 <div id="instructionsList">
                 </div>
-                <div class="add-ingredient-container">
-                    <button type="button" onclick="addInstruction()">+ Add Instruction</button>
+                <div class="add-instruction-container">
                 </div>
                 
                 
-                <label for="photo">Recipe Photo:</label>
-                <input type="text" id="photo" name="photo" placeholder="Enter photo URL">
+                <label for="photo">Upload Recipe Photo:</label>
+                <input type="file" id="photo" accept="image/*" onchange="handlePhotoUpload(event)">
 
                 <label>Tags/Categories:</label>
-                <input type="text" id="tags" placeholder="Add tags, separated by commas">
+                <input type="text" id="tags" placeholder="Add tags, separated by commas like momchocolaterecipe, birthday">
 
                 <button type="button" onclick="previewRecipe()">Preview</button>
                 <button type="submit">Publish</button>
