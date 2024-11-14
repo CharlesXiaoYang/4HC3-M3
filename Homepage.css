@@ -455,7 +455,6 @@ ul {
 .poster-name {
     font-size: 0.8rem; /* Made user name smaller */
     color: #666; /* Softer color for the user name */
-    margin-right: auto;
 }
 
 .like-count {
@@ -517,6 +516,7 @@ ul {
     gap: 30px;
     flex: auto;
     flex-wrap: wrap;
+
 }
 
 
@@ -546,7 +546,7 @@ ul {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.like-button, .comment-button, .save-button, .share-button, .popup button, .close-popup-button, .carousel-arrow, .share-option img, .send-button {
+.like-button, .comment-button, .send-button, .save-button, .share-button, .popup button, .close-popup-button, .carousel-arrow, .share-option img, .send-button {
     transition: transform 0.4s, box-shadow 0.3s;
 
 }
@@ -569,6 +569,9 @@ ul {
     border-radius: 5px;
     word-break: break-all;
     word-break: break-word;
+    border-width: 1px;
+    border-color: #ebc999;
+    border-style: solid;
 }
 
 .commenter-name {
@@ -1125,8 +1128,8 @@ input, textarea {
 
 .video {
     border-radius: 8px;
-    height: 280px;
-    width: 500px;
+    height: 337.5px;
+    width: 600px;
 }
 
 .back-button-recipe {
@@ -1310,6 +1313,59 @@ input, textarea {
     top: 15px;
     right: 15px;
 }
+
+.info-container {
+    display: flex;
+    justify-content: space-between; /* Evenly spaces items across full width */
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding-bottom: 40px;
+    width: 100%; /* Takes up full width of the container */
+    margin: 0; /* Removes centering */
+    
+}
+
+.info-box {
+    text-align: center;
+    flex: 1; 
+    background-color: #FFEEDA;
+    border-radius: 4px;
+    
+}
+.info-box p {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    
+
+}
+.info-box span {
+    font-size: 16px;
+    color: #555;
+}
+.divider {
+    border-left: 1px solid #000;
+    height: 40px;
+}
+.title-date {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.title {
+    flex: 1 0 100px;
+}
+
+.posted-date {
+    padding-top: 48px;
+    font-size: 0.8rem; /* Made user name smaller */
+    color: #666; /* Softer color for the user name */
+}
+
+
 
 
 @media (max-width: 768px) {

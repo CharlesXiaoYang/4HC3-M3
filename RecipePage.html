@@ -207,37 +207,62 @@
                 Go Back
             </a>
                 <!-- Recipe Title and Image -->
-                <section class="recipe-detail-header">
-                        <h1 style= "margin-bottom: 0">Kung Pao Chicken</h1>
-                        <div class="poster-name" style = "padding-bottom: 20px;"> Posted by Charles Xiao</div>
-                        <div class="media">
-                            <div class="carousel-main">
-                                <div class="carousel-images-main">
-                                    <button class="carousel-arrow picture-arrow-left" onclick="prevImage()">&#9664;</button>
-                                    <button class="carousel-arrow picture-arrow-right" onclick="nextImage()">&#9654;</button>
-
-
-                                    <img src="Kung_Pao_Chicken1.jpg" alt="Kung_Pao_Chicken1" class="carousel-image-main" style="display: block;">
-                                    <img src="Kung_Pao_Chicken2.jpg" alt="Kung_Pao_Chicken2" class="carousel-image-main">
-                                    <img src="Kung_Pao_Chicken3.jpg" alt="Kung_Pao_Chicken3" class="carousel-image-main">
-                                </div>
-                            </div>
-                        <iframe class="video"
-                            src="https://www.youtube.com/embed/n4W2g_IUY3I">
-                        </iframe>
-                        </div>
-
-                    <!-- <img src="kung_pao_chicken1.jpg" alt="Kung Pao Chicken" class="recipe-detail-image" style="width: 425px; height: auto"> -->
-                    <div class="recipe-meta">
-                        <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
-                        <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
-                            <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto"> Bookmark
-                        </div>
-                        <a class="comment-button" href="#comment-input"> 💬 Comment</a>
-                        <div class="share-button" onclick="openSharePopup('share-popup')"> 🔗 Share</div>
-                        
+            <!-- Recipe Title and Image -->
+            <section class="recipe-detail-header">
+                <div class="title-date">
+                    <div class="title"> 
+                        <div > <h1 style="margin-bottom: 0">Kung Pao Chicken</h1></div>
+                        <div class="poster-name" style="padding-bottom: 20px;"> Posted by: Charles Xiao</div>
                     </div>
-                </section>
+                    <div class="posted-date" style="padding-bottom: 20px;"> Last Updated: May 2, 2024</div>
+                </div>
+                        <div class="media">
+                            <span>
+                                <div class="carousel-main">
+                                    <div class="carousel-images-main">
+                                        <button class="carousel-arrow picture-arrow-left" onclick="prevImage()">&#9664;</button>
+                                        <button class="carousel-arrow picture-arrow-right" onclick="nextImage()">&#9654;</button>
+                                        <img src="Kung_Pao_Chicken1.jpg" alt="Kung_Pao_Chicken1" class="carousel-image-main" style="display: block;">
+                                        <img src="Kung_Pao_Chicken2.jpg" alt="Kung_Pao_Chicken2" class="carousel-image-main">
+                                        <img src="Kung_Pao_Chicken3.jpg" alt="Kung_Pao_Chicken3" class="carousel-image-main">
+                                    </div>
+                                </div>
+                        </span>
+                        <div>  
+                        <div class="info-container">
+                            <div class="info-box">
+                            <p>Cooking Time</p>
+                            <span>1 hr</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="info-box">
+                            <p>Serves</p>
+                            <span>4</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="info-box">
+                            <p>Calories</p>
+                            <span>929</span>
+                            </div>
+                            <br> 
+                        </div>
+                        <iframe class="video" src="https://www.youtube.com/embed/n4W2g_IUY3I"></iframe>
+                         
+                        </div>
+                    </div>
+                
+
+                <!-- Recipe Meta Section -->
+                <div class="recipe-meta">
+                    <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
+                    <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
+                        <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto"> Bookmark
+                    </div>
+                    <a class="comment-button" href="#comment-input"> 💬 Comment</a>
+                    <div class="share-button" onclick="openSharePopup('share-popup')"> 🔗 Share</div>
+                </div>
+            </section>
+
 
 
             <div class="ingredient-instructions">

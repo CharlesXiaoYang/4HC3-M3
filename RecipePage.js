@@ -24,6 +24,13 @@ function toggleSave() {
 function postComment() {
     const commentInput = document.getElementById("comment-input");
     const commentText = commentInput.value.trim();
+    if (commentText == '') {
+        alert('Comment cannot be blank!');
+      }
+    else{
+        alert('Comment successfully posted!');
+
+    }
 
     if (commentText) {
         // Create a new comment element

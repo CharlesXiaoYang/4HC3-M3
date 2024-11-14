@@ -1132,6 +1132,68 @@ form textarea {
 }
 
 
+/* Styles for the help modal (same as login modal for consistency) */
+#helpModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#helpModal .modal-content {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: left;
+    position: relative;
+}
+
+.help-steps {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+/* Help button style */
+#help-button {
+    display: flex;
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 25px;
+    font-weight: medium;
+}
+ul {
+    flex-grow: 1; /* This pushes the login button and help button to the bottom */
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
 #recipeForm input[type="text"],
 #recipeForm textarea,
 #recipeForm input[type="file"] {
