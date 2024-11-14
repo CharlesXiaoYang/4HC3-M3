@@ -10,12 +10,12 @@ function addIngredient() {
 
     const ingredientInput = document.createElement('input');
     ingredientInput.type = 'text';
-    ingredientInput.placeholder = 'Ingredient like Chocolate';
+    ingredientInput.placeholder = 'Ingredient (e.g., Chocolate)';
     ingredientInput.style.width = '60%'; // Adjust ingredient input width as needed
     
     const quantityInput = document.createElement('input');
     quantityInput.type = 'text';
-    quantityInput.placeholder = 'Quantity like 500g';
+    quantityInput.placeholder = 'Quantity (e.g., 50g)';
     quantityInput.style.width = '40%'; // Set quantity input width smaller than ingredient
     
     // Optional: Add classes for consistent styling (if defined in CSS)
@@ -110,7 +110,7 @@ function addInstruction() {
 
     // Instruction textarea
     const instructionInput = document.createElement('textarea');
-    instructionInput.placeholder = 'Step-by-step instruction like break the chocolate into small pieces';
+    instructionInput.placeholder = 'Step-by-step instructions (e.g., Break the chocolate into small pieces)';
 
     // Create the remove button (trash icon)
     const removeButton = document.createElement('button');

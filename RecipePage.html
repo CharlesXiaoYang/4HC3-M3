@@ -52,8 +52,8 @@
                     <div class="modal-content">
                         <button class="close-button" id="closeBtn">&times;</button>
                         <h2>Login</h2>
-                        <input type="text" class="input-field" placeholder="Enter Phone Number">
-                        <input type="text" class="input-field" placeholder="Enter Verification Code">
+                        <input type="text" class="input-field" placeholder="Enter Phone Number or Email">
+                        <input type="text" class="input-field" placeholder="Enter Verification Code or Password">
                         <button class="action-button" id="getCodeBtn">Get Verification Code</button>
                         <div class="remember-me">
                             <input type="checkbox" id="rememberMe">
@@ -200,7 +200,7 @@
 
         <!-- Main content for Recipe Details -->
         <main class="main-content">
-            <a href="Homepage.html" class="back-button-recipe">
+            <a href="Homepage.html"  title="Go back to Discover" class="back-button-recipe">
                 <svg viewBox="0 0 24 24">
                     <path d="M15 6l-6 6 6 6"></path>
                 </svg>
@@ -254,12 +254,13 @@
 
                 <!-- Recipe Meta Section -->
                 <div class="recipe-meta">
-                    <div class="like-button" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes</div>
-                    <div class="save-button" id="save-button" onclick="openPopup()" data-saved="false">
+                    <div class="like-button" title="Like this Recipe" onclick="toggleLike(this)" data-liked="false">🤍 1.65k likes 
+                    </div>
+                    <div class="save-button" title="Save Recipe" id="save-button" onclick="openPopup()" data-saved="false">
                         <img src="bookmark-white.png" id="bookmark" alt="Bookmark" style="width: 17px; height: auto"> Bookmark
                     </div>
-                    <a class="comment-button" href="#comment-input"> 💬 Comment</a>
-                    <div class="share-button" onclick="openSharePopup('share-popup')"> 🔗 Share</div>
+                    <a class="comment-button" title="Move to Comments" href="#comment-input"> 💬 Comment</a>
+                    <div class="share-button"  title="Share this Recipe" onclick="openSharePopup('share-popup')"> 🔗 Share</div>
                 </div>
             </section>
 
@@ -307,7 +308,7 @@
             <!-- New Comment Input -->
             <div class="new-comment">
                 <textarea type="text"  id="comment-input" class="comment-input" placeholder="Add a comment..." ></textarea>
-                <button class="send-button" onclick="postComment()">Send</button>
+                <button class="send-button" title="Post Comment Below" onclick="postComment()">Post</button>
             </div>
 
             <!-- Existing Comments -->

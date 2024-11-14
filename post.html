@@ -46,8 +46,8 @@
                 <div class="modal-content">
                     <button class="close-button" id="closeBtn">&times;</button>
                     <h2>Login</h2>
-                    <input type="text" class="input-field" placeholder="Enter Phone Number">
-                    <input type="text" class="input-field" placeholder="Enter Verification Code">
+                    <input type="text" class="input-field" placeholder="Enter Phone Number or Email">
+                    <input type="text" class="input-field" placeholder="Enter Verification Code or Password">
                     <button class="action-button" id="getCodeBtn">Get Verification Code</button>
                     <div class="remember-me">
                         <input type="checkbox" id="rememberMe">
@@ -128,10 +128,10 @@
                 <h1>Post a New Recipe</h1>
 
                 <label>Recipe Title:</label>
-                <input type="text" id="title" placeholder="Enter recipe title like Mom Chocolate cake recipe" required>
+                <input type="text" id="title" placeholder="Enter recipe title (e.g., Mom's Chocolate Cake Recipe)" required>
                 
                 <label>Description:</label>
-                <textarea id="description" placeholder="Write a brief description like This is the recipe of my mother with a lot of butter!" required></textarea>
+                <textarea id="description" placeholder="Write a brief description (e.g., This is the recipe of my mother with a lot of butter!)" required></textarea>
                 
                 <label>Ingredients:</label>
                 <div id="ingredientsList">
@@ -151,7 +151,7 @@
                 <input type="file" id="photo" accept="image/*" onchange="handlePhotoUpload(event)">
 
                 <label>Tags/Categories:</label>
-                <input type="text" id="tags" placeholder="Add tags, separated by commas like momchocolaterecipe, birthday">
+                <input type="text" id="tags" placeholder="Add tags separated by commas (e.g., momchocolaterecipe, birthday)">
 
                 <button type="button" onclick="previewRecipe()">Preview</button>
                 <button type="submit">Publish</button>
