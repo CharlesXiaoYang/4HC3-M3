@@ -362,6 +362,16 @@ ul {
     gap: 10px;
     margin-bottom: 20px;
 }
+
+
+.header-help{
+    text-align: center;
+}
+
+.modal-content li{
+    margin-bottom: 10px;
+}
+
 .category-button {
     display: inline-flex;
     align-items: center;
@@ -1290,7 +1300,7 @@ input, textarea {
     padding: 40px 30px;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-    width: 400px;
+    width: 500px;
     max-width: 90%;
     text-align: left;
     position: relative;
