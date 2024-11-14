@@ -1329,9 +1329,11 @@ input, textarea {
     justify-content: space-between; /* Evenly spaces items across full width */
     align-items: center;
     font-family: Arial, sans-serif;
-    padding-bottom: 40px;
     width: 100%; /* Takes up full width of the container */
     margin: 0; /* Removes centering */
+    border-radius: 4px;
+    background-color: #FFEEDA;
+    margin-bottom: 30px;
     
 }
 
@@ -1339,7 +1341,7 @@ input, textarea {
     text-align: center;
     flex: 1; 
     background-color: #FFEEDA;
-    border-radius: 4px;
+    padding: 11px
     
 }
 .info-box p {
@@ -1356,7 +1358,7 @@ input, textarea {
 }
 .divider {
     border-left: 1px solid #000;
-    height: 40px;
+    height: 50px;
 }
 .title-date {
     display: flex;
